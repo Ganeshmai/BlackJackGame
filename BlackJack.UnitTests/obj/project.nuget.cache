@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7BEy9LU9t+4zXZXRfMlNEYEOeNlpQ+B6oAchEJfZIiQWCW7nrySUzl0+Y1pYT3VOwSUFe8AXYNDE3sqYCrZbww==",
+  "dgSpecHash": "37AQmBYQjT2CYS/PrCR+KcTJGpfNej2RaNAfGxnrJXqujefw51nTXUF8BLAgk4+TNUcqlV02D2ky4PXLITEDpA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MG65524\\Downloads\\BlackJackGame\\BlackJack.UnitTests\\BlackJack.UnitTests.csproj",
+  "projectFilePath": "D:\\Blackclone\\BlackJack.UnitTests\\BlackJack.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MG65524\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\MG65524\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",

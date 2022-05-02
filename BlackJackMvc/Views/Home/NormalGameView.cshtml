@@ -7,13 +7,12 @@
 }
 <div>
 <div>
-
+      @if (@ViewBag.Display == false){
   <a asp-action="Hit" asp-route-id="1"><button class="btn btn-warning"style="float:left"> Hit </button></a>
   
-  &nbsp;
-  &nbsp;
+  
    <a asp-action="Stay" asp-route-id="1"><button class="btn btn-success"style="float:left"> Stay</button></a>
-
+      }
 </div>
 <div>
 <table class="table table-hover">
