@@ -195,6 +195,10 @@ namespace BlackJackMVC.Controllers
                 {
                     ViewBag.Dealercard2 = dealer.CardsInHand[2].Suit + "-" + player1.CardsInHand[2].Face;
                 }
+                if (dealerplayerscore <= 17)
+                {
+                    return RedirectToAction("Stay", new { id = 1 });
+                }
                 ViewBag.Display = true;
                 return View("NormalGameView");
             }
