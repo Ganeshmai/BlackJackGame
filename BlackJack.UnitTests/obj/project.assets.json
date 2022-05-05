@@ -8252,11 +8252,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Blackclone\\BlackJack.UnitTests\\BlackJack.UnitTests.csproj",
+      "projectUniqueName": "D:\\Change in git\\BlackJack.UnitTests\\BlackJack.UnitTests.csproj",
       "projectName": "BlackJack.UnitTests",
-      "projectPath": "D:\\Blackclone\\BlackJack.UnitTests\\BlackJack.UnitTests.csproj",
+      "projectPath": "D:\\Change in git\\BlackJack.UnitTests\\BlackJack.UnitTests.csproj",
       "packagesPath": "C:\\Users\\MG65524\\.nuget\\packages\\",
-      "outputPath": "D:\\Blackclone\\BlackJack.UnitTests\\obj\\",
+      "outputPath": "D:\\Change in git\\BlackJack.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8277,8 +8277,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Blackclone\\BlackJackMvc\\BlackJackMVC.csproj": {
-              "projectPath": "D:\\Blackclone\\BlackJackMvc\\BlackJackMVC.csproj"
+            "D:\\Change in git\\BlackJackMvc\\BlackJackMVC.csproj": {
+              "projectPath": "D:\\Change in git\\BlackJackMvc\\BlackJackMVC.csproj"
             }
           }
         }

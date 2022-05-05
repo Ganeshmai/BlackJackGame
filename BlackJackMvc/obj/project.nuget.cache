@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ckZHfzA/Kb9pBiUNAdYfr7T7/TZzPdYupd8aGrssNwdqiKc/udrZaBzbAnEj7oQIMrl4LTux66FXqbqEhM66ow==",
+  "dgSpecHash": "3RDd5fotLg7fBtj3ypcxKLKT2Bz19te8JvWqqD0E9E5EYxtxDTsgK9jJ2Lk6Cgo1biI0ox0EXsULtisAiee80Q==",
   "success": true,
-  "projectFilePath": "D:\\Blackclone\\BlackJackMvc\\BlackJackMVC.csproj",
+  "projectFilePath": "D:\\Change in git\\BlackJackMvc\\BlackJackMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MG65524\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\MG65524\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

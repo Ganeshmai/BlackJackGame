@@ -133,8 +133,6 @@ namespace BlackJackMVC.Controllers
 
             #endregion
 
-            foreach (var c in deck.CardsInDeck)
-                Console.WriteLine(c);
             for (int i = 0; i < 52; i++)
             {
                 deck.Deal();
@@ -157,11 +155,19 @@ namespace BlackJackMVC.Controllers
             {
                 TempData["HandCard2"] = player1.CardsInHand[2].Suit + "-" + player1.CardsInHand[2].Face;
             }
+            if (player1.CardsInHand.Count > 3)
+            {
+                TempData["HandCard3"] = player1.CardsInHand[3].Suit + "-" + player1.CardsInHand[3].Face;
+            }
             TempData["Dealer"] = dealer.CardsInHand[0].Suit + "-" + dealer.CardsInHand[0].Face;
             TempData["Dealer1"] = dealer.CardsInHand[1].Suit + "-" + dealer.CardsInHand[1].Face;
             if (dealer.CardsInHand.Count > 2)
             {
                 TempData["Dealer2"] = dealer.CardsInHand[2].Suit + "-" + player1.CardsInHand[2].Face;
+            }
+            if (dealer.CardsInHand.Count > 3)
+            {
+                TempData["Dealer3"] = dealer.CardsInHand[3].Suit + "-" + player1.CardsInHand[3].Face;
             }
             #endregion
 
@@ -191,9 +197,17 @@ namespace BlackJackMVC.Controllers
                 {
                     ViewBag.HandCard2 = player1.CardsInHand[2].Suit + "-" + player1.CardsInHand[2].Face;
                 }
+                if (player1.CardsInHand.Count > 3)
+                {
+                    ViewBag.HandCard3 = player1.CardsInHand[3].Suit + "-" + player1.CardsInHand[3].Face;
+                }
                 if (dealer.CardsInHand.Count > 2)
                 {
-                    ViewBag.Dealercard2 = dealer.CardsInHand[2].Suit + "-" + player1.CardsInHand[2].Face;
+                    ViewBag.Dealercard2 = dealer.CardsInHand[2].Suit + "-" + dealer.CardsInHand[2].Face;
+                }
+                if (dealer.CardsInHand.Count > 3)
+                {
+                    ViewBag.Dealercard3 = dealer.CardsInHand[3].Suit + "-" + dealer.CardsInHand[3].Face;
                 }
                 if (dealerplayerscore <= 17)
                 {
@@ -267,17 +281,25 @@ namespace BlackJackMVC.Controllers
             TempData["HandCard"] = player1.CardsInHand[0].Suit + "-" + player1.CardsInHand[0].Face;
             TempData["HandCard1"] = player1.CardsInHand[1].Suit + "-" + player1.CardsInHand[1].Face;
 
-            if (player1.CardsInHand.Count == 3)
+            if (player1.CardsInHand.Count > 2)
             {
                 TempData["HandCard2"] = player1.CardsInHand[2].Suit + "-" + player1.CardsInHand[2].Face;
+            }
+            if (player1.CardsInHand.Count > 3)
+            {
+                TempData["HandCard3"] = player1.CardsInHand[3].Suit + "-" + player1.CardsInHand[3].Face;
             }
 
             TempData["Dealer"] = dealer.CardsInHand[0].Suit + "-" + dealer.CardsInHand[0].Face;
             TempData["Dealer1"] = dealer.CardsInHand[1].Suit + "-" + dealer.CardsInHand[1].Face;
 
-            if (dealer.CardsInHand.Count == 3)
+            if (dealer.CardsInHand.Count >2 )
             {
                 TempData["Dealer2"] = dealer.CardsInHand[2].Suit + "-" + dealer.CardsInHand[2].Face;
+            }
+            if (dealer.CardsInHand.Count > 3)
+            {
+                TempData["Dealer3"] = dealer.CardsInHand[3].Suit + "-" + dealer.CardsInHand[3].Face;
             }
             #endregion
 
@@ -304,9 +326,17 @@ namespace BlackJackMVC.Controllers
                 {
                     ViewBag.HandCard2 = player1.CardsInHand[2].Suit + "-" + player1.CardsInHand[2].Face;
                 }
+                if (player1.CardsInHand.Count > 3)
+                {
+                    ViewBag.HandCard3 = player1.CardsInHand[3].Suit + "-" + player1.CardsInHand[3].Face;
+                }
                 if (dealer.CardsInHand.Count > 2)
                 {
                     ViewBag.Dealercard2 = dealer.CardsInHand[2].Suit + "-" + dealer.CardsInHand[2].Face;
+                }
+                if (dealer.CardsInHand.Count > 3)
+                {
+                    ViewBag.Dealercard3 = dealer.CardsInHand[3].Suit + "-" + dealer.CardsInHand[3].Face;
                 }
                 ViewBag.Display = true;
                 return View("NormalGameView");
@@ -333,9 +363,11 @@ namespace BlackJackMVC.Controllers
             ViewBag.CardInHand = TempData["HandCard"];
             ViewBag.CardInHand1 = TempData["HandCard1"];
             ViewBag.CardInHand2 = TempData["HandCard2"];
+            ViewBag.CardInHand3 = TempData["HandCard3"];
             ViewBag.CardInDeal = TempData["Dealer"];
             ViewBag.CardInDeal1 = TempData["Dealer1"];
             ViewBag.CardInDeal2 = TempData["Dealer2"];
+            ViewBag.CardInDeal3 = TempData["Dealer3"];
             ViewBag.Pscore = TempData["playerScore"];
             ViewBag.dscore = TempData["dealerScore"];
             ViewBag.winner = TempData["winner"];
