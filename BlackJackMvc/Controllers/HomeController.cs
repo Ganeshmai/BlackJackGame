@@ -17,12 +17,13 @@ namespace BlackJackMVC.Controllers
         private readonly MyContext _context;
 
         private readonly ICardValues _cardValues;
-
+        
 
         public HomeController(MyContext context, ICardValues cardValues)
         {
             _context = context;
             _cardValues = cardValues;
+            
         }
         #endregion
 
@@ -30,6 +31,8 @@ namespace BlackJackMVC.Controllers
         [HttpGet("/Start")]
         public IActionResult Index(int id = 0)
         {
+            _context.Database.EnsureDeleted();
+            _context.Database.EnsureCreated();
 
             Deck deck = new Deck();
             deck.Shuffle();
@@ -147,7 +150,7 @@ namespace BlackJackMVC.Controllers
 
             ViewBag.Hand = player1.CardsInHand;
             ViewBag.Dealer = dealer.CardsInHand;
-
+            //_context.SaveChanges();
             #region CardDataSend
             TempData["HandCard"] = player1.CardsInHand[0].Suit + "-" + player1.CardsInHand[0].Face;
             TempData["HandCard1"] = player1.CardsInHand[1].Suit + "-" + player1.CardsInHand[1].Face;
@@ -163,11 +166,11 @@ namespace BlackJackMVC.Controllers
             TempData["Dealer1"] = dealer.CardsInHand[1].Suit + "-" + dealer.CardsInHand[1].Face;
             if (dealer.CardsInHand.Count > 2)
             {
-                TempData["Dealer2"] = dealer.CardsInHand[2].Suit + "-" + player1.CardsInHand[2].Face;
+                TempData["Dealer2"] = dealer.CardsInHand[2].Suit + "-" + dealer.CardsInHand[2].Face;
             }
             if (dealer.CardsInHand.Count > 3)
             {
-                TempData["Dealer3"] = dealer.CardsInHand[3].Suit + "-" + player1.CardsInHand[3].Face;
+                TempData["Dealer3"] = dealer.CardsInHand[3].Suit + "-" + dealer.CardsInHand[3].Face;
             }
             #endregion
 
@@ -276,6 +279,8 @@ namespace BlackJackMVC.Controllers
             }
             ViewBag.Hand = player1.CardsInHand;
             ViewBag.Dealer = dealer.CardsInHand;
+            _context.Update(deck);
+            _context.SaveChanges();
 
             #region CardDataSend
             TempData["HandCard"] = player1.CardsInHand[0].Suit + "-" + player1.CardsInHand[0].Face;
@@ -347,6 +352,7 @@ namespace BlackJackMVC.Controllers
             Console.WriteLine("Staying");
             return RedirectToAction("Result", "Home");
         }
+        
 
         #endregion
 
@@ -356,7 +362,7 @@ namespace BlackJackMVC.Controllers
         {
             if (TempData["HandCard"] == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "StartGame");
             }
 
 
@@ -372,6 +378,7 @@ namespace BlackJackMVC.Controllers
             ViewBag.dscore = TempData["dealerScore"];
             ViewBag.winner = TempData["winner"];
 
+         
             return View();
 
         }

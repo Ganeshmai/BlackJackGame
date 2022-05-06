@@ -62,6 +62,8 @@ namespace BlackJackMVC
                     name: "default",
                     pattern: "{controller=StartGame}/{action=Index}/{id?}");
             });
+
+     
         }
     }
 }
